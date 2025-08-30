@@ -1,0 +1,165 @@
+.flex-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 3rem;
+}
+
+.track-crypto-heading,
+.real-time-heading {
+  font-size: 6.5rem;
+  margin: 0;
+}
+
+.track-crypto-heading {
+  color: var(--white);
+}
+
+.track-crypto-heading:hover {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--white);
+  color: var(--black);
+  transition: all 0.3s;
+}
+
+.real-time-heading {
+  color: var(--blue);
+}
+
+.info-text {
+  color: var(--grey);
+  font-size: 1rem;
+}
+
+.info-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* css for phone component */
+
+.right-component {
+  width: 50%;
+  position: relative;
+  padding: 1rem;
+  margin-right: 2rem;
+}
+
+.iphone-img {
+  position: absolute;
+  z-index: 1;
+  min-width: 290px;
+  width: 10%;
+  right: 0;
+}
+
+.gradient-img {
+  position: absolute;
+  min-width: 240px;
+  width: 5%;
+  top: 6rem;
+  right: 0;
+}
+
+@media only screen and (max-width: 1250px) {
+  .track-crypto-heading,
+  .real-time-heading {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .track-crypto-heading,
+  .real-time-heading {
+    font-size: 3.5rem;
+  }
+  .iphone-img {
+    min-width: 230px;
+  }
+
+  .gradient-img {
+    min-width: 180px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .flex-info {
+    flex-direction: column;
+  }
+  .left-component{
+    width: 100%;
+  }
+
+  .track-crypto-heading,
+  .real-time-heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .info-text{
+    text-align: center;
+  }
+  .info-btn{
+    justify-content: center;
+  }
+  .track-crypto-heading:hover {
+  -webkit-text-stroke-width: 1px;
+}
+
+  .right-component {
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  .iphone-img {
+    left: 4rem;
+  }
+
+  .gradient-img {
+    left: 8rem;
+  }
+}
+
+
+@media only screen and (max-width: 450px) {
+  .flex-info {
+    flex-direction: column;
+  }
+  .left-component{
+    width: 100%;
+  }
+
+  .track-crypto-heading,
+  .real-time-heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .info-text{
+    text-align: center;
+  }
+  .info-btn{
+    justify-content: center;
+  }
+  .track-crypto-heading:hover {
+  -webkit-text-stroke-width: 1px;
+}
+
+  .right-component {
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  .iphone-img {
+    left: -2rem;
+  }
+
+  .gradient-img {
+    left: 1rem;
+  }
+}
+
+
