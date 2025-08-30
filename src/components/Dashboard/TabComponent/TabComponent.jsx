@@ -34,9 +34,9 @@ export default function TabComponent() {
         </TabList>
 
         <TabPanel value="Grid">
-            <div>Mapping for Grid</div>
+            <div>Mapping for Grid.</div>
         </TabPanel>
-        <TabPanel value="List"><div>mapping for List</div></TabPanel>
+        <TabPanel value="List"><div>mapping for List.</div></TabPanel>
       </TabContext>
     </ThemeProvider>
   );
