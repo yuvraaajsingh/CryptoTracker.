@@ -4,8 +4,9 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { p } from "motion/react-client";
 
-export default function TabComponent() {
+export default function TabComponent({ coins }) {
   const theme = createTheme({
     palette: {
       primary: {
@@ -34,9 +35,28 @@ export default function TabComponent() {
         </TabList>
 
         <TabPanel value="Grid">
-            <div>Mapping for Grid.</div>
+          <div>
+            {coins.map((item, i) => {
+              return (
+                <p key={i}>
+                  {i + 1}.{item.name}
+                </p>
+              );
+            })}
+          </div>
         </TabPanel>
-        <TabPanel value="List"><div>mapping for List.</div></TabPanel>
+        <TabPanel value="List">
+          <div>
+            {coins.map((item, i) => {
+              return (
+                <p key={i}>
+                  {i + 1}
+                  <img src={item.image} />
+                </p>
+              );
+            })}
+          </div>
+        </TabPanel>
       </TabContext>
     </ThemeProvider>
   );
