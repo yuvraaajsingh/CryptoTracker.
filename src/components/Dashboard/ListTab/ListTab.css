@@ -6,6 +6,7 @@
   display: flex;
   border-radius: 1rem;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 
 .list-container:hover{

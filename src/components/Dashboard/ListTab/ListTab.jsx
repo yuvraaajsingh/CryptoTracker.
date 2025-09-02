@@ -20,19 +20,19 @@ function ListTab({ coin }) {
   return (
     <div className="list-container">
       <div className="logo-name-list">
-        <StyledTooltip title="Logo">
+        <StyledTooltip title="Logo" placement="bottom-start">
           <img src={coin.image} className="coin-logo-list" />
         </StyledTooltip>
-        <div className="name-list">
+        <div className="name-list" placement="bottom-start">
           <StyledTooltip title="Symbol">
             <div className="coin-symbol-list">{coin.symbol}</div>
           </StyledTooltip>
-          <StyledTooltip title="Name">
+          <StyledTooltip title="Name" placement="bottom-start">
             <div className="coin-name-list">{coin.name}</div>
           </StyledTooltip>
         </div>
       </div>
-      <StyledTooltip title="Price change">
+      <StyledTooltip title="Price change in 24 h" placement="bottom-start">
         <div className="change-percent-list">
           <div
             className={
@@ -58,7 +58,7 @@ function ListTab({ coin }) {
         </div>
       </StyledTooltip>
       <div className="current-market-list">
-        <StyledTooltip title="Current Price">
+        <StyledTooltip title="Current Price" placement="bottom-start">
           <div
             className="current-price-list"
             style={{
@@ -71,13 +71,13 @@ function ListTab({ coin }) {
             ${coin.current_price.toLocaleString("en-US")}
           </div>
         </StyledTooltip>
-        <StyledTooltip title="Total Volume">
+        <StyledTooltip title="Total Volume" placement="bottom-start">
           <div className="total-volume-list">
             {" "}
             ${coin.total_volume.toLocaleString("en-US")}
           </div>
         </StyledTooltip>
-        <StyledTooltip title="Market Cap">
+        <StyledTooltip title="Market Cap" placement="bottom-start" >
           <div className="market-cap-list">
             {" "}
             ${coin.market_cap.toLocaleString("en-US")}
