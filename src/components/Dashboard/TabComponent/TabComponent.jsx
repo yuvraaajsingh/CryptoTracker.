@@ -6,6 +6,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import { createTheme, ThemeProvider } from "@mui/material";
 import GridTab from "../GridTab/GridTab";
 import './TabComponent.css'
+import ListTab from "../ListTab/ListTab";
 
 export default function TabComponent({ coins }) {
   const theme = createTheme({
@@ -43,6 +44,11 @@ export default function TabComponent({ coins }) {
           </div>
         </TabPanel>
         <TabPanel value="List">
+          <div className="list">
+            {coins.map((coin, i) => {
+              return<ListTab coin={coin} key={i}/>;
+            })}
+          </div>
           
         </TabPanel>
       </TabContext>
