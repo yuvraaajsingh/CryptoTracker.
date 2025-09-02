@@ -1,0 +1,116 @@
+.grid-container {
+  width: 300px;
+  height: 300px;
+  border: 2px solid var(--darkgrey);
+  border-radius: 0.5rem;
+  background-color: var(--darkgrey);
+  cursor: pointer;
+}
+
+.grid-container-red:hover{
+  border: 1px solid var(--red);
+}
+.grid-container-green:hover{
+  border: 1px solid var(--green);
+}
+
+
+.coin-logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.img-name-flex {
+  display: flex;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+}
+
+.name-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.coin-symbol {
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin: 0;
+}
+.coin-name {
+  color: var(--grey);
+  font-size: 0.75rem;
+  font-weight: light;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.change-percent {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 2rem;
+  gap: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.up-percent-num {
+  border: 2px solid var(--green);
+  border-radius: 3rem;
+  color: var(--green);
+  padding: 0.5rem;
+  min-width: 5rem;
+}
+.down-percent-num {
+  border: 2px solid var(--red);
+  border-radius: 3rem;
+  color: var(--red);
+  padding: 0.5rem;
+  min-width: 5rem;
+}
+
+.up-percent-logo {
+  border: 2px solid var(--green);
+  color: var(--green);
+  border-radius: 3rem;
+  padding: 0.5rem;
+  min-width: 0.5rem;
+}
+.down-percent-logo {
+  border: 2px solid var(--red);
+  color: var(--red);
+  border-radius: 3rem;
+  padding: 0.5rem;
+  min-width: 0.5rem;
+}
+
+.up-percent-logo:hover,
+.up-percent-num:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.down-percent-logo:hover,
+.down-percent-num:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.current-price {
+  padding: 1.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.vol-cap {
+  padding-left: 2rem;
+  font-size: 0.8rem;
+  color: var(--grey);
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

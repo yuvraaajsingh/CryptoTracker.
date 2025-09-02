@@ -43,3 +43,9 @@ body {
 a {
   text-decoration: none;
 }
+
+img {
+  -user-drag: none;
+  -webkit-user-drag: none; 
+  -moz-user-drag: none;    
+}
