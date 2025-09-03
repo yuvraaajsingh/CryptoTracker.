@@ -3,22 +3,31 @@ import Header from "../components/Common/Header/Header";
 import TabComponent from "../components/Dashboard/TabComponent/TabComponent";
 import axios from "axios";
 import Search from "../components/Dashboard/Search/Search";
+import PaginationDashboard from "../components/Dashboard/PaginationDashboard/PaginationDashboard";
+import Loader from "../components/Common/Loader/Loader";
 
 const Dashboard = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [isloading, setIsLoading] = useState(true);
+
   const onSearchChange = (e) => {
     setSearch(e.target.value);
+    setPage(1); // Reset to first page on new search
   };
 
-  var filteredCoin = coins.filter(
+  // Filter coins
+  const filteredCoins = coins.filter(
     (item) =>
       item.name.toLowerCase().includes(search.toLowerCase()) ||
       item.symbol.toLowerCase().includes(search.toLowerCase())
-  ) ;
-  if (filteredCoin===""){
-    console.log("Sdfgs")
-  }
+  );
+
+  // Paginate filtered results
+  const startIndex = (page - 1) * 10;
+  const paginatedCoins = filteredCoins.slice(startIndex, startIndex + 10);
+
   useEffect(() => {
     const options = {
       method: "GET",
@@ -33,17 +42,29 @@ const Dashboard = () => {
     axios
       .request(options)
       .then((res) => {
-        console.log(res.data);
         setCoins(res.data);
+        setIsLoading(false);
       })
       .catch((err) => console.error(err));
+    setIsLoading(false);
   }, []);
+
   return (
-    <div>
+    <>
       <Header />
-      <Search search={search} onSearchChange={onSearchChange} />
-      <TabComponent coins={filteredCoin} />
-    </div>
+      {isloading ? (
+        <Loader />
+      ) : (
+        <div>
+          <Search search={search} onSearchChange={onSearchChange} />
+          <TabComponent coins={paginatedCoins} />
+          <PaginationDashboard
+            page={page}
+            handlePageChange={(_, value) => setPage(value)}
+          />
+        </div>
+      )}
+    </>
   );
 };
 
