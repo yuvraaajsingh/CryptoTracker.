@@ -61,14 +61,20 @@ const Dashboard = () => {
         <div>
           <Search search={search} onSearchChange={onSearchChange} />
           {filteredCoins.length === 0 ? (
-            <p className="text-center text-gray-400 mt-4">No coins found 🚫</p>
+            <p style={{ textAlign: "center", margin: "3rem" }}>
+              No Crypto Currencies Found
+            </p>
           ) : (
             <>
               <TabComponent coins={paginatedCoins} />
-              <PaginationDashboard
-                page={page}
-                handlePageChange={(_, value) => setPage(value)}
-              />
+              {search ? (
+                ""
+              ) : (
+                <PaginationDashboard
+                  page={page}
+                  handlePageChange={(_, value) => setPage(value)}
+                />
+              )}
             </>
           )}
           <BottomtoTop />
