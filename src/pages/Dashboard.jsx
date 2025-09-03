@@ -53,7 +53,7 @@ const Dashboard = () => {
     <>
       <Header />
       {isloading ? (
-        <Loader />
+        <Loader/>
       ) : (
         <div>
           <Search search={search} onSearchChange={onSearchChange} />
