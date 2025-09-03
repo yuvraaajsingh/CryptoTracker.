@@ -5,12 +5,13 @@ import axios from "axios";
 import Search from "../components/Dashboard/Search/Search";
 import PaginationDashboard from "../components/Dashboard/PaginationDashboard/PaginationDashboard";
 import Loader from "../components/Common/Loader/Loader";
+import BottomtoTop from "../components/Common/BottomtoTop/BottomtoTop";
 
 const Dashboard = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const [isloading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const onSearchChange = (e) => {
     setSearch(e.target.value);
@@ -45,23 +46,32 @@ const Dashboard = () => {
         setCoins(res.data);
         setIsLoading(false);
       })
-      .catch((err) => console.error(err));
-    setIsLoading(false);
+      .catch((err) => {
+        console.error(err);
+        setIsLoading(false); // handle error properly
+      });
   }, []);
 
   return (
     <>
       <Header />
-      {isloading ? (
-        <Loader/>
+      {isLoading ? (
+        <Loader />
       ) : (
         <div>
           <Search search={search} onSearchChange={onSearchChange} />
-          <TabComponent coins={paginatedCoins} />
-          <PaginationDashboard
-            page={page}
-            handlePageChange={(_, value) => setPage(value)}
-          />
+          {filteredCoins.length === 0 ? (
+            <p className="text-center text-gray-400 mt-4">No coins found 🚫</p>
+          ) : (
+            <>
+              <TabComponent coins={paginatedCoins} />
+              <PaginationDashboard
+                page={page}
+                handlePageChange={(_, value) => setPage(value)}
+              />
+            </>
+          )}
+          <BottomtoTop />
         </div>
       )}
     </>
