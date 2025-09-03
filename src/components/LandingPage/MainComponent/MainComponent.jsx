@@ -1,5 +1,5 @@
 import React from "react";
-import "./mainComponent.css";
+import "./MainComponent.css";
 import Button from "../../Common/Button/Button";
 import iphone from "../../../assets/phone.png";
 import gradient from "../../../assets/gradient.png";
