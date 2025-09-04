@@ -58,14 +58,12 @@
 }
 
 @media screen and (max-width: 600px) {
-  .mobile-view-mkt{
-    display: none;
-  }
+  
 
   .mobile-view{
     text-align: right;
   }
-  .mobile-view-vol-cap{
+  .mobile-view-vol-cap, .mobile-view-ttl-vol,.mobile-view-mkt{
     display: none;
   }
   .coin-symbol,.coin-name,.change-percent,.current-price,p{

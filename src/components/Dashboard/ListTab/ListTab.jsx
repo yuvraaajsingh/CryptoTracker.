@@ -66,7 +66,7 @@ const ListTab = ({ coin }) => {
         </div>
       </td>
       
-        <td>
+        <td className="mobile-view-ttl-vol">
           <Tooltip title="Total Volume">
             <p className="right-align smaller-font td-total-volume">
               ${coin.total_volume.toLocaleString("en-US")}
