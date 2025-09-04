@@ -77,3 +77,16 @@
     min-width: 50% !important;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .td-image{
+    display: none;
+  }
+  .coin-symbol,.coin-name,.change-percent,.current-price,p{
+    font-size: 68% !important;
+  }
+
+  .up-percent-num,.down-percent-num{
+    min-width: 100% !important;
+  }
+}
