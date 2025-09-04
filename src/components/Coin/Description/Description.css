@@ -1,0 +1,9 @@
+.wrapper{
+    padding: 0.5rem 1rem;
+    text-align: justify;
+}
+
+.desc-para a{
+    color: var(--blue);
+    text-decoration: overline;
+}
