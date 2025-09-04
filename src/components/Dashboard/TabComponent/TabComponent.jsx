@@ -45,9 +45,11 @@ export default function TabComponent({ coins }) {
         </TabPanel>
         <TabPanel value="List">
           <div className="list">
+            <table className="list-table">
             {coins.map((coin, i) => {
               return<ListTab coin={coin} key={i}/>;
             })}
+            </table>
           </div>
           
         </TabPanel>
