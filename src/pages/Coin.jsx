@@ -8,14 +8,17 @@ import ListTab from "../components/Dashboard/ListTab/ListTab";
 import Description from "../components/Coin/Description/Description";
 import getCoinData from "../function/getCoinData";
 import getCoinPrice from "../function/getCoinPrice";
+import LineChart from "../components/Coin/LineChart/LineChart";
+import ConvertDate from "../function/ConvertDate";
 const Coin = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [cryptoData, setCryptoData] = useState();
-  const [days, setDays] = useState(7);
+  const [days, setDays] = useState(30);
+  const [chartData, setChartData] = useState({});
   useEffect(() => {
     if (id) {
-      getData(id)
+      getData(id);
       // axios
       //   .get(`https://api.coingecko.com/api/v3/coins/${id}`)
       //   .then((res) => {
@@ -38,20 +41,29 @@ const Coin = () => {
       //     console.log(err);
       //     setIsLoading(false);
       //   });
-
     }
   }, [id]);
 
   async function getData(id) {
-    const coinData= await getCoinData(id)
-    if(coinData)
-    {
+    const coinData = await getCoinData(id);
+    if (coinData) {
       convertObject(setCryptoData, coinData);
-      const priceData= await getCoinPrice(id,days);
-      if(priceData)
-      {
+      const priceData = await getCoinPrice(id, days);
+      if (priceData) {
         console.log(priceData);
-        setIsLoading(false)
+        setChartData({
+          labels: priceData.map((data)=>ConvertDate(data[0])),
+          datasets: [
+            {
+              data: priceData.map((data)=>data[1]),
+              borderColor: "#3a80e9",
+              backgroundColor: "transparent",
+            },
+            
+          ],
+        });
+
+        setIsLoading(false);
       }
     }
   }
@@ -64,6 +76,9 @@ const Coin = () => {
         <>
           <div className="grey-wrapper">
             <ListTab coin={cryptoData} />
+          </div>
+          <div className="grey-wrapper">
+            <LineChart chartData={chartData} />
           </div>
           <div className="grey-wrapper">
             <Description
