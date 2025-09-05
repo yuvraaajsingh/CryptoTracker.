@@ -1,27 +1,17 @@
 import axios from "axios";
 
 const getCoinPrice = (id, days) => {
-
-  const options = {
-    method: "GET",
-    url: `https://api.coingecko.com/api/v3/coins/${id}/market_chart`,
-    params: { vs_currency: "usd", days: days, interval: "daily" },
-    headers: {
-      accept: "application/json",
-      "x-cg-demo-api-key": "CG-MWvc4X8YR89rUwxavr64hy6m",
-    },
-  };
-
-  const coinPrice = axios
-    .request(options)
+  const data = axios
+    .get(
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+    )
     .then((res) => {
-      return res.data.prices;
+      return res.data;
     })
     .catch((err) => {
-      console.error(err);
-      setIsLoading(false);
+      console.log(err);
     });
-    return coinPrice;
+    return data;
 };
 
 export default getCoinPrice;
