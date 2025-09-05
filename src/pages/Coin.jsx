@@ -10,12 +10,12 @@ const Coin = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [cryptoData, setCryptoData] = useState();
+  const [days, setDays] = useState(30);
   useEffect(() => {
     if (id) {
-      const coin_name = id.toLowerCase();
       const options = {
         method: "GET",
-        url: `https://api.coingecko.com/api/v3/coins/${coin_name}`,
+        url: `https://api.coingecko.com/api/v3/coins/${id}`,
         headers: {
           accept: "application/json",
           "x-cg-demo-api-key": "CG-MWvc4X8YR89rUwxavr64hy6m",
@@ -26,6 +26,27 @@ const Coin = () => {
         .request(options)
         .then((res) => {
           convertObject(setCryptoData, res.data);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.error(err);
+          setIsLoading(false);
+        });
+
+      const option = {
+        method: "GET",
+        url: `https://api.coingecko.com/api/v3/coins/${id}/market_chart`,
+        params: { vs_currency: "usd", days: days, interval: "daily" },
+        headers: {
+          accept: "application/json",
+          "x-cg-demo-api-key": "CG-MWvc4X8YR89rUwxavr64hy6m",
+        },
+      };
+
+      axios
+        .request(option)
+        .then((res) => {
+          console.log(res.data.prices);
           setIsLoading(false);
         })
         .catch((err) => {
@@ -45,10 +66,10 @@ const Coin = () => {
             <ListTab coin={cryptoData} />
           </div>
           <div className="grey-wrapper">
-          <Description
-            description={cryptoData.description}
-            heading={cryptoData.name}
-          />
+            <Description
+              description={cryptoData.description}
+              heading={cryptoData.name}
+            />
           </div>
         </>
       )}

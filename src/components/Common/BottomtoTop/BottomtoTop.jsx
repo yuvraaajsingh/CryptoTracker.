@@ -1,35 +1,38 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./BottomtoTop.css";
 import NorthRoundedIcon from "@mui/icons-material/NorthRounded";
 
 const BottomtoTop = () => {
-  // Get the button
-  let mybutton = document.getElementById("myBtn");
+  const myButtonRef = useRef(null);
 
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function () {
-    scrollFunction();
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        myButtonRef.current.style.display = "flex";
+      } else {
+        myButtonRef.current.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const topFunction = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 200 ||
-      document.documentElement.scrollTop > 200
-    ) {
-      mybutton.style.display = "flex";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-
   return (
-    <div className="bottom-to-top" id="myBtn" onClick={()=> topFunction()}>
+    <div
+      className="bottom-to-top"
+      id="myBtn"
+      ref={myButtonRef}
+      onClick={topFunction}
+    >
       <NorthRoundedIcon sx={{ fontSize: 35, color: "var(--blue)" }} />
     </div>
   );

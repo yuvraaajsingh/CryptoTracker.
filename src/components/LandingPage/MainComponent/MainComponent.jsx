@@ -4,6 +4,7 @@ import Button from "../../Common/Button/Button";
 import iphone from "../../../assets/phone.png";
 import gradient from "../../../assets/gradient.png";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const MainComponent = () => {
   return (
@@ -31,17 +32,16 @@ const MainComponent = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 1 }}
           transition={{ duration: 0.3, delay: 0.6 }}
-        >
-          Track crypto through a public api in real time. Visit the dashboard to
-          do so!
-        </motion.p>
+        ></motion.p>
         <motion.div
           className="info-btn"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 1 }}
           transition={{ duration: 0.3, delay: 0.9 }}
         >
+          <Link to="/dashboard">
           <Button text={"dashboard"} />
+          </Link>
           <Button text={"share"} outlined={true} />
         </motion.div>
       </div>
@@ -51,11 +51,11 @@ const MainComponent = () => {
         <motion.img
           src={iphone}
           className="iphone-img"
-          initial={{y:-10}}
-          animate={{y:10}}
+          initial={{ y: -10 }}
+          animate={{ y: 10 }}
           transition={{
-            type:"smooth",
-            repeatType:"mirror",
+            type: "smooth",
+            repeatType: "mirror",
             duration: 2, // 2 seconds for one cycle
             repeat: Infinity, // Loop forever
           }}

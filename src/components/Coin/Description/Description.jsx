@@ -13,7 +13,6 @@ const Description = ({ description, heading }) => {
   return (
     <div className="wrapper">
       <h2>{heading}</h2>
-      {console.log(description)}
       <p
         dangerouslySetInnerHTML={{
           __html: description.length >= 300 ? (toggle ? longDesc : shortDesc) : description,

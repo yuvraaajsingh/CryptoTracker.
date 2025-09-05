@@ -8,11 +8,13 @@ const Header = () => {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   return (
     <div className="navbar">
+      <Link to="/">
       <h1 className="logo">
         CryptoTracker<span className="logo-dot">.</span>
       </h1>
+      </Link>
       <div className="links">
-        <Switch {...label} defaultChecked />
+        {/* <Switch {...label} defaultChecked /> */}
         <Link to="/">
           <p className="link">Home</p>
         </Link>
@@ -25,7 +27,7 @@ const Header = () => {
         <Link to="/dashboard">
           <Button
             text={"dashboard"}
-            onClick={() => console.log("btn clicked")}
+            outlined={false}
           />
         </Link>
       </div>
