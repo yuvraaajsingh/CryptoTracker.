@@ -3,6 +3,7 @@ import "./App.css";
 import HomePage from "./pages/HomePage";
 import Dashboard from "./pages/Dashboard";
 import Coin from "./pages/Coin";
+import Compare from "./pages/Compare";
 function App() {
   return (
     <>
@@ -11,6 +12,7 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path="/coin/:id" element={<Coin/>}/>
+          <Route path="/compare" element={<Compare/>}/>
         </Routes>
       </BrowserRouter>
     </>

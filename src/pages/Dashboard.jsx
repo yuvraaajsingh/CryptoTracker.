@@ -6,6 +6,7 @@ import Search from "../components/Dashboard/Search/Search";
 import PaginationDashboard from "../components/Dashboard/PaginationDashboard/PaginationDashboard";
 import Loader from "../components/Common/Loader/Loader";
 import BottomtoTop from "../components/Common/BottomtoTop/BottomtoTop";
+import get100coin from "../function/get100coin";
 
 const Dashboard = () => {
   const [coins, setCoins] = useState([]);
@@ -30,27 +31,16 @@ const Dashboard = () => {
   const paginatedCoins = filteredCoins.slice(startIndex, startIndex + 10);
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://api.coingecko.com/api/v3/coins/markets",
-      params: { vs_currency: "usd", per_page: "100" },
-      headers: {
-        accept: "application/json",
-        "x-cg-demo-api-key": "CG-MWvc4X8YR89rUwxavr64hy6m",
-      },
-    };
-
-    axios
-      .request(options)
-      .then((res) => {
-        setCoins(res.data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setIsLoading(false); // handle error properly
-      });
+    get100coins();
   }, []);
+
+  async function get100coins() {
+    const getCoins = await get100coin();
+    if (getCoins) {
+      setCoins(getCoins);
+      setIsLoading(false);
+    }
+  }
 
   return (
     <>
