@@ -1,17 +1,18 @@
 import axios from "axios";
 
-const getCoinPrice = (id, days) => {
+const getCoinPrice = (id, days, priceType) => {
   const data = axios
     .get(
       `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
     )
     .then((res) => {
-      return res.data.prices;
+      console.log(res.data)
+      return res.data[priceType];
     })
     .catch((err) => {
       console.log(err);
     });
-    return data;
+  return data;
 };
 
 export default getCoinPrice;
