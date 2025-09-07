@@ -62,3 +62,10 @@ img {
   padding:0rem 0.5rem;
   border-radius: 0.8rem;
 }
+
+.compare-days-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}

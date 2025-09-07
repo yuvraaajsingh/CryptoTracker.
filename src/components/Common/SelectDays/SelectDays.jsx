@@ -1,12 +1,11 @@
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import "./SelectComponent.css";
-import { useState } from "react";
+import "./SelectDays.css";
 
-export default function SelectComponent({ days, handleDaysChange }) {
+export default function SelectDays({ days, handleDaysChange, noPtag }) {
   return (
     <div className="select-days">
-      <p>Price Change in the last</p>
+      {!noPtag && <p>Price Change in the last</p>}
       <Select
         value={days}
         onChange={handleDaysChange}

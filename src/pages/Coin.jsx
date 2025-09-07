@@ -8,9 +8,10 @@ import Description from "../components/Coin/Description/Description";
 import getCoinData from "../function/getCoinData";
 import getCoinPrice from "../function/getCoinPrice";
 import LineChart from "../components/Coin/LineChart/LineChart";
-import SelectComponent from "../components/Common/SelectComponent/SelectComponent";
+
 import settingChartData from "../function/settingChartData";
 import TogglePriceType from "../components/Common/TogglePriceType/TogglePriceType";
+import SelectDays from "../components/Common/SelectDays/SelectDays";
 
 const Coin = () => {
   const { id } = useParams();
@@ -24,7 +25,7 @@ const Coin = () => {
     if (id) {
       getData(id);
     }
-  }, [id, days,priceType]);
+  }, [id, days, priceType]);
 
   async function getData(id) {
     setIsLoading(true);
@@ -33,7 +34,7 @@ const Coin = () => {
       convertObject(setCryptoData, coinData);
       const priceData = await getCoinPrice(id, days, priceType);
       if (priceData) {
-        console.log(priceData)
+        console.log(priceData);
         settingChartData(priceData, setChartData);
         setIsLoading(false);
       }
@@ -57,12 +58,12 @@ const Coin = () => {
             <ListTab coin={cryptoData} />
           </div>
           <div className="grey-wrapper">
-            <SelectComponent days={days} handleDaysChange={handleDaysChange} />
+            <SelectDays days={days} handleDaysChange={handleDaysChange} />
             <TogglePriceType
               priceType={priceType}
               handlePriceTypeChange={handlePriceTypeChange}
             />
-            <LineChart chartData={chartData} priceType={priceType}/>
+            <LineChart chartData={chartData} priceType={priceType} />
           </div>
           <div className="grey-wrapper">
             <Description
