@@ -22,9 +22,6 @@ const Compare = () => {
         days={days}
         handleDaysChange={handleDaysChange}
       />
-      
-      
-      {/* <ListTab coin={crypto1}/> */}
     </div>
   );
 };

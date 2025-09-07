@@ -54,7 +54,6 @@ const Select100Coin = ({
       <p>Crypto 1</p>
       <Select
         value={crypto1}
-        // label="Crypto 1"
         onChange={(event) => handleCoinChange(event, false)}
         displayEmpty
         sx={style}
@@ -66,7 +65,6 @@ const Select100Coin = ({
       <p>Crypto 2</p>
       <Select
         value={crypto2}
-        // label="Crypto 2"
         onChange={(event) => handleCoinChange(event, true)}
         displayEmpty
         sx={style}
@@ -75,7 +73,11 @@ const Select100Coin = ({
           return <MenuItem value={coin.id}>{coin.name}</MenuItem>;
         })}
       </Select>
-      <SelectDays  days={days} handleDaysChange={handleDaysChange}  noPtag={true} />
+      <SelectDays
+        days={days}
+        handleDaysChange={handleDaysChange}
+        noPtag={true}
+      />
     </div>
   );
 };
