@@ -18,7 +18,7 @@ const Compare = () => {
   const [chartData, setChartData] = useState({});
   const [priceType, setPriceType] = useState("prices");
   const [days, setDays] = useState(30);
-
+  const multiAxis= true;
   const handleDaysChange = (event) => {
     setDays(event.target.value);
   };
@@ -68,7 +68,7 @@ const Compare = () => {
             <ListTab coin={crypto2Data} />
           </div>
           <div className="grey-wrapper">
-            <LineChart chartData={chartData} priceType={priceType} />
+            <LineChart chartData={chartData} multiAxis={multiAxis} priceType={priceType} />
           </div>
           <div className="grey-wrapper">
             <Description
