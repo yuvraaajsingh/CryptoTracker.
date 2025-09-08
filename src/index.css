@@ -19,6 +19,20 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+[data-theme="dark"] {
+  --white: #ffffff;
+  --black: #111;
+  --grey: #888;
+  --darkgrey: #1b1b1b;
+}
+
+[data-theme="light"] {
+  --white: #111;
+  --black: #fff;
+  --grey: #888;
+  --darkgrey: #f3f3f3;
+}
+
 html {
   scroll-behavior: smooth;
 }
