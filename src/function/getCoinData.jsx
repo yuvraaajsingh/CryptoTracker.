@@ -8,7 +8,6 @@ const getCoinData = (id) => {
     })
     .catch((err) => {
       console.log(err);
-      setIsLoading(false);
     });
     return data;
 };

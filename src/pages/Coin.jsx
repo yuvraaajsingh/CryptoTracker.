@@ -8,7 +8,6 @@ import Description from "../components/Coin/Description/Description";
 import getCoinData from "../function/getCoinData";
 import getCoinPrice from "../function/getCoinPrice";
 import LineChart from "../components/Coin/LineChart/LineChart";
-
 import settingChartData from "../function/settingChartData";
 import TogglePriceType from "../components/Common/TogglePriceType/TogglePriceType";
 import SelectDays from "../components/Common/SelectDays/SelectDays";
@@ -34,7 +33,7 @@ const Coin = () => {
       convertObject(setCryptoData, coinData);
       const priceData = await getCoinPrice(id, days, priceType);
       if (priceData) {
-        console.log(priceData);
+        // console.log(priceData);
         settingChartData(priceData, setChartData);
         setIsLoading(false);
       }

@@ -1,9 +1,8 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto"; //Dont get rid of this
-import ConvertNumber from "../../../function/ConvertNumber";
 
-function LineChart({ chartData, multiAxis,priceType }) {
+function LineChart({ chartData, multiAxis }) {
   const options = {
     plugins: {
       legend: {
@@ -16,17 +15,12 @@ function LineChart({ chartData, multiAxis,priceType }) {
       intersect: false,
     },
     scales: {
-        y:{
-          ticks:{
-            callback:function(value,index,ticks)
-            {
-              if(priceType==="prices")
-                return "$"+value.toLocaleString();
-              else
-                return "$"+ConvertNumber(value);
-            }
-          }
-        }
+      crypto1: {
+        position: "left",
+      },
+      crypto2: {
+        position: "right",
+      },
     },
   };
 

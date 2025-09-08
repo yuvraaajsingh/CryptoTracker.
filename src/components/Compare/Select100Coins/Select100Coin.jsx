@@ -58,9 +58,12 @@ const Select100Coin = ({
         displayEmpty
         sx={style}
       >
-        {allcoins.map((coin) => {
-          return <MenuItem value={coin.id}>{coin.name}</MenuItem>;
-        })}
+        {allcoins
+          .filter((coin) => coin.id != crypto2)
+
+          .map((coin) => {
+            return <MenuItem value={coin.id}>{coin.name}</MenuItem>;
+          })}
       </Select>
       <p>Crypto 2</p>
       <Select
@@ -69,9 +72,11 @@ const Select100Coin = ({
         displayEmpty
         sx={style}
       >
-        {allcoins.map((coin) => {
-          return <MenuItem value={coin.id}>{coin.name}</MenuItem>;
-        })}
+        {allcoins
+          .filter((coin) => coin.id != crypto1)
+          .map((coin) => {
+            return <MenuItem value={coin.id}>{coin.name}</MenuItem>;
+          })}
       </Select>
       <SelectDays
         days={days}
