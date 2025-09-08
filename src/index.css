@@ -19,7 +19,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -50,22 +50,26 @@ a {
 
 img {
   -user-drag: none;
-  -webkit-user-drag: none; 
-  -moz-user-drag: none;    
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
 }
 
-.grey-wrapper{
+.grey-wrapper {
   display: block;
   width: 90%;
   background-color: var(--darkgrey);
   margin: 1.5rem auto;
-  padding:0rem 0.5rem;
+  padding: 0rem 0.5rem;
   border-radius: 0.8rem;
 }
 
-.compare-days-flex{
+.compare-days-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
+}
+
+.compare-toggle-price {
+  padding-top: 2rem;
 }

@@ -6,7 +6,7 @@ const settingChartData = (prices1, setChartData, prices2 = null) => {
       labels: prices1?.map((data) => ConvertDate(data[0])),
       datasets: [
         {
-          label: "Crypto 1",
+          label: "Crypto  1",
           data: prices1?.map((data) => data[1]),
           borderWidth: 1,
           fill: false,
