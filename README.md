@@ -1,48 +1,36 @@
 # CryptoTracker
 
-A **React**-based cryptocurrency tracker that displays real-time prices, historical charts, and market insights for 100+ cryptocurrencies using the CoinGecko API. Deployed on Vercel for fast, responsive access.
+A **React.js** based cryptocurrency tracking web app that provides **real-time prices, market stats, and interactive charts** for 100+ cryptocurrencies using the **CoinGecko API**.  
+Built with **Material UI** for a modern UI, **Chart.js** for data visualization, **Axios** for API calls, **React Router** for navigation, and **Framer Motion** for smooth animations.  
+Deployed on **Vercel** for seamless performance.  
 
-[Live Demo (Vercel)](https://your-vercel-project.vercel.app) • [Repo](https://github.com/yuvraaajsingh/CryptoTracker)
-
----
-
-## Key Features
-- Real-time price updates, market cap, 24h change and other key metrics.  
-- Interactive historical charts (selectable time range).  
-- Search, filter and compare cryptocurrencies.  
-- Dark / Light mode toggle.  
-- Responsive UI for desktop and mobile.
+[🔗 Live Demo](https://your-vercel-project.vercel.app) | [💻 GitHub Repo](https://github.com/yuvraaajsingh/CryptoTracker)
 
 ---
 
-## Tech Stack
-- **Frontend:** React.js (functional components + hooks)  
-- **Charts:** Chart.js (or react-chartjs-2)  
-- **Styling:** Tailwind CSS / Material UI (whatever used in project)  
-- **API:** CoinGecko public API  
-- **Deployment:** Vercel
+## 🚀 Features
+- 📊 **Real-time crypto prices** with market cap, volume, and 24h trends.  
+- 📈 **Interactive charts** powered by Chart.js with selectable time ranges.  
+- 🔎 **Search & filter** functionality for 100+ cryptocurrencies.  
+- 🌙 **Dark / Light mode** toggle with Material UI.  
+- 🔄 **Page navigation** using React Router.  
+- 🎞️ **Smooth animations** with Framer Motion.  
+- 🌐 Deployed on Vercel with mobile-responsive UI.  
 
 ---
 
-## Demo / Screenshots
-> Replace these with actual images or GIFs from your project.
-
-![Screenshot 1](./screenshots/home.png)  
-![Screenshot 2](./screenshots/chart.png)
+## 🛠️ Tech Stack
+- **Frontend:** React.js  
+- **UI Components:** Material UI  
+- **Charts:** Chart.js (react-chartjs-2)  
+- **API Handling:** Axios  
+- **Routing:** React Router  
+- **Animations:** Framer Motion  
+- **API:** CoinGecko API  
+- **Deployment:** Vercel  
 
 ---
 
-## Installation (Local)
 
-1. Clone the repo:
-```bash
-git clone https://github.com/yuvraaajsingh/CryptoTracker.git
-cd CryptoTracker
-npm install
-# or
-yarn
-npm run dev
-# or for CRA
-npm start
-REACT_APP_API_BASE=https://api.coingecko.com/api/v3
-REACT_APP_CURRENCY=usd
+
+
