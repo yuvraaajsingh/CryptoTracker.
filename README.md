@@ -4,14 +4,14 @@ A **React.js** based cryptocurrency tracking web app that provides **real-time p
 Built with **Material UI** for a modern UI, **Chart.js** for data visualization, **Axios** for API calls, **React Router** for navigation, and **Framer Motion** for smooth animations.  
 Deployed on **Vercel** for seamless performance.  
 
-[🔗 Live Demo](https://your-vercel-project.vercel.app) | [💻 GitHub Repo](https://github.com/yuvraaajsingh/CryptoTracker)
+[🔗 Live Demo](https://your-vercel-project.vercel.app) 
 
 ---
 
 ## 🚀 Features
-- 📊 **Real-time crypto prices** with market cap, volume, and 24h trends.  
+- 📊 **Real-time crypto prices** with market cap, volume, and trends.  
 - 📈 **Interactive charts** powered by Chart.js with selectable time ranges.  
-- 🔎 **Search & filter** functionality for 100+ cryptocurrencies.  
+- 🔎 **Search & filter** functionality for 100 cryptocurrencies.  
 - 🌙 **Dark / Light mode** toggle with Material UI.  
 - 🔄 **Page navigation** using React Router.  
 - 🎞️ **Smooth animations** with Framer Motion.  
